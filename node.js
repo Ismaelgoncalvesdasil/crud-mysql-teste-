@@ -20,7 +20,7 @@ connection.connect((err) => {
 // Adicionar novo item
 app.post('/api/items', (req, res) => {
   const item = req.body;
-  connection.query('INSERT INTO items SET id = ?', item, (err, result) => {
+  connection.query('INSERT INTO items SET ?', item, (err, result) => {
     if (err) throw err;
     res.send('Item adicionado com sucesso');
   });
